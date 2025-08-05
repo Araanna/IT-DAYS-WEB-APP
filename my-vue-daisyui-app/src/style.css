@@ -1,0 +1,139 @@
+  /* src/style.css */
+
+  /* Standard Tailwind CSS v4 import */
+  @import "tailwindcss";
+
+  /*
+    DaisyUI Main Plugin Configuration:
+    - 'lemonade' is set as the default theme (--default).
+    - 'green' is set as the default theme for dark mode (--prefersdark).
+    - You can also list other built-in themes here if you want them available for dynamic switching.
+  */
+  @plugin "daisyui" {
+    themes: lemonade --default, green --prefersdark;
+    /* If you want all built-in themes + your customs: */
+    /* themes: all, lemonade --default, green --prefersdark; */
+  }
+
+  /*
+    DaisyUI Custom Theme Definition: GREEN (for dark mode)
+    This block defines the 'green' theme's specific colors and properties.
+    It will be used when data-theme="green" is active or when prefers-color-scheme is dark.
+  */
+  @plugin "daisyui/theme" {
+    name: "green";
+    default: false; /* Not the overall default, but the prefers-dark default */
+    prefersdark: true; /* Set as default for dark mode */
+    color-scheme: dark; /* Browser UI color scheme for this theme */
+
+    --color-base-100: oklch(26% 0.065 152.934);
+    --color-base-200: oklch(39% 0.095 152.535);
+    --color-base-300: oklch(44% 0.119 151.328);
+    --color-base-content: oklch(96% 0.044 156.743);
+    --color-primary: oklch(90% 0.182 98.111);
+    --color-primary-content: oklch(28% 0.066 53.813);
+    --color-secondary: oklch(83% 0.128 66.29);
+    --color-secondary-content: oklch(26% 0.079 36.259);
+    --color-accent: oklch(0% 0 0);
+    --color-accent-content: oklch(100% 0 0);
+    --color-neutral: oklch(44% 0.119 151.328);
+    --color-neutral-content: oklch(98% 0.018 155.826);
+    --color-info: oklch(68% 0.169 237.323);
+    --color-info-content: oklch(97% 0.013 236.62);
+    --color-success: oklch(70% 0.14 182.503);
+    --color-success-content: oklch(98% 0.014 180.72);
+    --color-warning: oklch(70% 0.213 47.604);
+    --color-warning-content: oklch(98% 0.016 73.684);
+    --color-error: oklch(64% 0.246 16.439);
+    --color-error-content: oklch(96% 0.015 12.422);
+
+    --radius-selector: 2rem;
+    --radius-field: 1rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.21875rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 1;
+  }
+
+  /*
+    DaisyUI Custom Theme Definition: LEMONADE (for light mode)
+    This block defines the 'lemonade' theme's specific colors and properties.
+    It will be used when data-theme="lemonade" is active or as the default.
+  */
+  @plugin "daisyui/theme" {
+    name: "lemonade";
+    default: true; /* Set as the overall default theme */
+    prefersdark: false; /* Not the prefers-dark default */
+    color-scheme: light; /* Browser UI color scheme for this theme */
+
+    --color-base-100: oklch(98.71% 0.02 123.72);
+    --color-base-200: oklch(91.8% 0.018 123.72);
+    --color-base-300: oklch(84.89% 0.017 123.72);
+    --color-base-content: oklch(19.742% 0.004 123.72);
+    --color-primary: oklch(58.92% 0.199 134.6);
+    --color-primary-content: oklch(11.784% 0.039 134.6);
+    --color-secondary: oklch(77.75% 0.196 111.09);
+    --color-secondary-content: oklch(15.55% 0.039 111.09);
+    --color-accent: oklch(85.39% 0.201 100.73);
+    --color-accent-content: oklch(17.078% 0.04 100.73);
+    --color-neutral: oklch(30.98% 0.075 108.6);
+    --color-neutral-content: oklch(86.196% 0.015 108.6);
+    --color-info: oklch(86.19% 0.047 224.14);
+    --color-info-content: oklch(17.238% 0.009 224.14);
+    --color-success: oklch(86.19% 0.047 157.85);
+    --color-success-content: oklch(17.238% 0.009 157.85);
+    --color-warning: oklch(86.19% 0.047 102.15);
+    --color-warning-content: oklch(17.238% 0.009 102.15);
+    --color-error: oklch(86.19% 0.047 25.85);
+    --color-error-content: oklch(17.238% 0.009 25.85);
+
+    --radius-selector: 1rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+  }
+
+  /*
+    Remove or comment out hard-coded background-color and color properties
+    to allow DaisyUI themes to fully control them.
+  */
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark; /* Keep this for browser hints */
+    /* color: rgba(255, 255, 255, 0.87); */ /* Remove or comment out */
+    /* background-color: #242424; */ /* Remove or comment out */
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    font-weight: 500;
+    /* color: #646cff; */ /* Consider removing and letting DaisyUI theme control link colors */
+    text-decoration: inherit;
+  }
+  a:hover {
+    /* color: #535bf2; */ /* Consider removing */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    font-weight: 400;
+
+
+  
+  }
